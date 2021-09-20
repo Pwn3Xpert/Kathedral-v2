@@ -1,0 +1,248 @@
+ 
+#!/bin/bash
+anonymousing() {
+if [[ $(systemctl status tor | grep "Active: active") ]]; then
+echo -e "${mwv}ანონიმურობა დაცულია  "
+else
+echo -e "${blink_start}$wtlანონიმურობა დაუცველია${blink_stop}"
+fi
+}
+
+ctrl(){
+trap ctrl_c INT
+ctrl_c() {
+echo -e $wtl"
+[*] დაფიქსირდა კლავიატურაზე (Ctrl + C), ნამდვილად გსურთ კათედრალის გათიშვა? დააჭირე კლავიატურაზე (Ctrl + Z)-ს"
+rm spider.tmp
+exit
+}
+}
+tmp="spider.tmp"
+title="Kathedral"
+app="Cron0s"
+null="/dev/null"
+randomagent="Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0"
+echo > spider.tmp
+bold=$(tput bold)
+norm=$(tput sgr0)
+blink_start="\033[1;5m"
+blink_stop="\033[0m"
+#ფერები
+mwv="\e[1;92m"
+wtl="\e[1;91m"
+lrj="\e[1;34m"
+ncr="\e[1;37m"
+yvt="\e[1;93m"
+ism="\e[1;95m"
+ttr="\e[1;97m"
+blank="\e[1;39m"
+fs="\e[1;96m"
+#ჩატვირთვა
+loading(){
+    bar="===================================="
+    barlength=${#bar}
+    i=0
+    while ((i < 100)); do
+        n=$((i*barlength / 100))
+        printf "\e[00;32m\r[%-${barlength}s]\e[00m" "${bar:0:n}"
+        ((i += RANDOM%5+2))
+  sleep 0.1
+    done
+    echo -e ""
+}
+#ბაგები და შეცდომები
+function kathbugcontactauthor() {
+echo -e "$mwv[${wtl}BUG$mwv]:$wtl ვერ მოხდა საიტის სტრუქტურის შესწავლა.. (${ttr}KathBUG-011${wtl})"
+echo -e "$mwv[${wtl}საიტი$mwv]:$wtl >>> (${ttr}https://kathedral.cybsecgroup.com${wtl}) <<< ${mwv}#გაწერე$wtl [CSG@WebTerm]=> ${mwv}cat kathbug"
+echo -e "$mwv[${wtl}ინფო$mwv]:$wtl ეწვიეთ ოფიციალურ საიტს და მოძებნე კოდი: (${ttr}KathBUG-011${wtl}) და გაიგე მისი მნიშვნელობა"
+echo -e "$wtlმიმდინარეობს ავარიული გათიშვა"
+exit
+}
+#კავშირგაბმულობა
+function checking() {
+echo -e "${mwv}[$yvtმოწმდება$mwv]: მიმდინარეობს კავშირის დამყარება ($ttr${url}$mwv)-საიტზე$blank"
+checker=`echo "${url}" | sed 's/http:\/\///g;s/https:\/\///g'`
+ip=`dig +short ${checker}`
+if [[  ! -z $(dig +short ${checker}) ]]
+then
+echo -e "${wtl}$bold[$ttr+$wtl]$mwv: კავშირი წარმატებით დამყარდა საიტთან. ($ttr${url}$mwv)$blank$norm"
+echo -e "${wtl}$bold[$ttr+$wtl]$mwv: მისამართი: (${wtl}${ip}${mwv})$norm"
+else
+checker=`echo "${url}" | sed 's/http:\/\///g;s/https:\/\///g'`
+if [[  ! -z $(curl "http://http://api.hackertarget.com//reversedns/?q=${checker}" -H "$randomagent") ]]
+then
+echo -e "${wtl}$bold[$ttr+$wtl]$mwv: კავშირი წარმატებით დამყარდა საიტთან. ($ttr${url}$mwv)$blank"
+else
+echo -e "${yvt}[${wtl}WhyRuGay?${yvt}]: მსგავსი ტიპის  დომეინი არ არსებობს !${blank}"
+exit
+fi
+fi
+}
+
+#ობობები
+quick_crawl() {
+  echo -e "${wtl}                         /\\\
+
+                    ____/ /
+     _             / ___ \\\\\\
+     \\\\\\_!_________(_/_/ \ \\\\\\
+     <#|=====|______ / /__/
+    / C|=====|---' \__/
+   /   |-|-|~
+  /    /---'
+ /    /
+|_____|
+"
+echo -e "$mwv[${wtl}n00b$mwv]:$mwv თქვენ აირჩიეთ სწრაფი რეჟიმი.. ${blink_start}${wtl}ალბათ ითვალისწინებთ იმ ფაქტსაც რომ შესაძლოა ობობას გამორჩეს მნიშვნელოვანი ბმულები...${blink_stop}$blank"
+echo -e "$mwv[$yvtინფო$mwv]:$mwv მიმდინარეობს ბმულების ძიება შესაძლოა ამას დასჭირდეს რამოდენიმე წუთიც...$blank"
+echo -e "$mwv[$yvtინფო$mwv]:$mwv გთხოვთ დაელოდოთ, მიმდინარეობს სტრუქტურის ზედაპირული შესწალა...$blank"
+curl "http://web.archive.org/cdx/search/cdx?url=${url}/*&output=json&collapse=urlkey&fl=original" -s  -H "$randomagent" | sed "s/\[\"//g;s/]//g;s/\"//g;s/,//g" | grep "http" >> ${tmp}
+echo -e "${wtl}[$ttr+$wtl]$mwv: სკანირება დასრულდა."
+}
+subdomain_crawl() {
+  echo -e "${wtl} 
+   ____________ _________________ 
+  /_   \_____  \\\\\\_____  \______  \\\\
+   |   | _(__  <  _(__  <   /    /
+   |   |/       \/       \ /    / 
+   |___/______  /______  //____/  
+              \/       \/ 
+${lrj}00110001 00110011 00110011 00110111 
+       ${ytv}0x49 0x51 0x51 0x55 
+                     "
+echo -e "$mwv[${wtl}1337$mwv]:$mwv მიმდინარეობს ბმულების ძიება შესაძლოა ამას დასჭირდეს რამოდენიმე წუთიც...$blank"
+echo -e "$mwv[$yvtინფო$mwv]:$mwv გთხოვთ დაელოდოთ, მიმდინარეობს სტრუქტურის ზედაპირული შესწალა...$blank"
+for urlist in $(curl -s "https://otx.alienvault.com/api/v1/indicators/hostname/${url}/passive_dns" -H "$randomagent" | sed "s/,/\n/g" | grep "\"hostname\":" | sed 's/"hostname"://g;s/"//g;s/ //g')
+do
+curl "http://web.archive.org/cdx/search/cdx?url=${urlist}/*&output=json&collapse=urlkey&fl=original" -s -H "$randomagent" | sed "s/\[\"//g;s/]//g;s/\"//g;s/,//g" | grep "http" >> ${tmp}
+done
+echo -e "${wtl}[$ttr+$wtl]$mwv: სკანირება დასრულდა."
+}
+subhost_crawl() {
+echo -e "${wtl}       _______ _____         ______ ______       
+      |   |   |  |  |.--.--.|      |      |.----.
+      |       |__    |_   _||  --  |  --  ||   _|
+      |___|___|  |__||__.__||______|______||__|
+${lrj}01001000 00110100 01111000 00110000 00110000 01110010 
+           ${yvt}0x72 0x52 0x120 0x48 0x48 0x114 
+                                     "
+echo -e "$mwv[${wtl}H4X00R$mwv]:$mwv მიმდინარეობს ამავე ჰოსტზე განთავსებული ყველა ქვე-დომეინის ძიება შესაძლოა ამას დასჭირდეს რამოდენიმე წუთიც...$blank"
+echo -e "$mwv[$yvtინფო$mwv]:$mwv გთხოვთ დაელოდოთ.$blank"
+for urlist in $(curl -s "https://otx.alienvault.com/api/v1/indicators/hostname/${ip}/passive_dns" -H "$randomagent" | sed "s/,/\n/g" | grep "\"hostname\":" | sed 's/"hostname"://g;s/"//g;s/ //g')
+do
+curl "http://web.archive.org/cdx/search/cdx?url=${urlist}/*&output=json&collapse=urlkey&fl=original" -s -H "$randomagent"| sed "s/\[\"//g;s/]//g;s/\"//g;s/,//g" | grep "http" >> ${tmp}
+done
+echo -e "${wtl}[$ttr+$wtl]$mwv: სკანირება დასრულდა."
+
+}
+everything_crawl() {
+echo -e "${wtl}
+       ______ ___ ___                    __   
+      |__    |   |   |.-----.-----.----.|  |_ 
+      |__    |-     -||  _  |  -__|   _||   _|
+      |______|___|___||   __|_____|__|  |____|
+                      |__|                    
+${lrj}00110011 01011000 01110000 01100101 01110010 01110100 
+          ${yvt}0x51 0x88 0x112 0x101 0x114 0x116 "
+
+
+echo -e "$mwv[${wtl}3Xpert$mwv]:$mwv მიმდინარეობს ამავე ჰოსტზე განთავსებული ყველა ქვე-დომეინის ძიება შესაძლოა ამას დასჭირდეს რამოდენიმე წუთიც...$blank"
+echo -e "$mwv[$yvtინფო$mwv]:$mwv გთხოვთ დაელოდოთ.$blank"
+for urlist in $(curl -s "https://api.hackertarget.com/reverseiplookup/?q=${ip}" -H "$randomagent")
+do
+curl "http://web.archive.org/cdx/search/cdx?url=${urlist}/*&output=json&collapse=urlkey&fl=original" -s -H "$randomagent" | sed "s/\[\"//g;s/]//g;s/\"//g;s/,//g" | grep "http"  >> ${tmp}
+done
+
+echo -e "${wtl}[$ttr+$wtl]$mwv: სკანირება დასრულდა."
+}
+function transformation() {
+echo -e "$mwv[$yvtინფო$mwv]:$mwv მიმდინარეობს ბმულების გადახარისხება."
+cat $tmp | grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" | sort | uniq | grep -w -v -e "#" -e "data" -e "javascript" -e "tel" -e "mailto" -e "eot" -e "jpg" -e "js" -e "svg" -e "ttf" -e "woff" -e "css" > metadata.tmp
+echo -e "${wtl}$bold[$ttr+$wtl]$mwv: ბმულები გადახარისხებულია."
+}
+#ობობის ფუნქციონალი
+crawltype() {
+echo -e "$mwv[$yvtინფო$mwv]:$ttr აირჩიეთ სკანირების ტიპი.$norm
+${wtl}(${ttr}1${wtl}) ${wtl}[${ttr}n00b${wtl}]   ${ncr}დასკანირდეს მხოლოდ ჩემს მიერ მითითებული ბმული. ${wtl}*${mwv}
+${wtl}(${ttr}2${wtl}) ${wtl}[${ttr}1337${wtl}]   ${ncr}დასკანირდეს ყველა ქვე-დომეინი.
+${wtl}(${ttr}3${wtl}) ${wtl}[${ttr}H4X00R${wtl}] ${ncr}დასკანირდეს ამავე ჰოსტზე განთავსებული ყველა ქვე-დომეინი.
+${wtl}(${ttr}4${wtl}) ${wtl}[${ttr}3Xpert${wtl}] ${ncr}დასკანირდეს ამავე ჰოსტზე განთავსებული ყველა საიტი."
+echo -ne "$mwv(${ttr}1/4${mwv})>$blank "
+read scantype
+case $scantype in
+1) quick_crawl;; #noob
+2) subdomain_crawl;; #leet
+3) subhost_crawl;; #haxoor
+4) everything_crawl;; #expert
+*) quick_crawl;; #default_noob
+esac
+}
+
+function robots() {
+if [[  ! -z $(curl -sLI "${url}/robots.txt" -H "$randomagent" | grep -e "text/plain" -e "Content-Type: text/plain" -e "content-type: text/plain") ]]
+then
+curl "${url}/robots.txt" -s | grep -e "Allow" -e "Disallow" | sed "s/Disallow: /${url}/g;s/Allow: /${url}/g" >> ${tmp}
+echo -e "${wtl}$bold[$ttr+$wtl]$mwv: ნაპოვნია ($ttr${url}/robots.txt$mwv)$blank"
+else
+echo -e "${wtl}$bold[$ttr-$wtl]$mwv: ($ttr${url}/robots.txt$wtl) ვერ იპოვნა$blank"
+fi
+}
+starting() {
+  checking
+  robots
+  crawltype
+  transformation
+  SQL_Injection
+}
+clear
+
+#შეღწევადობაზე ტესტირება
+function SQL_Injection(){
+tamper=( "%27" "\/" "~" "$" )
+  echo -e "
+ $wtl ______  _____        $mwv _ _  _  _ ____ ____ ___ _ ____ _  _
+ $wtl|______ |     | |      $mwv| |\ |  | |___ |     |  | |  | |\ |
+ $wtl _____| |____\| |_____ $mwv| | \| _| |___ |___  |  | |__| | \|
+               $wtl\ 
+"
+if [[ $(cat ${tmp} | sort | uniq |grep -P 'http.?://\S+' | grep "?" | grep "=") ]]; then
+echo -e "$mwv[$yvtინფო$mwv]:$yvt მიმდინარეობს SQL ინექციაზე ბმულების ტესტირება შესაძლოა ამას დასჭირდეს რამოდენიმე წამი..."
+tmp="metadata.tmp"
+diff=$(awk '!a[$0]++' ${tmp} | uniq | grep -w -v -i -e "jpg" -e "css" -e "js" | sed 's/\/\//\//g')
+tester=$(echo "$diff" | grep '?' )
+for (( i = 0; i < ${#tamper[@]}; ++i )); do
+for sqlinj in $(echo "$tester" | sort | uniq | sed "s/=\([a-zA-Z0-9]*\)$/=\1${tamper[i]}/g" ); do
+curl -skL --connect-timeout 5 --max-time 5 -H "$randomagent" "${sqlinj}" | grep 'Warning' > /dev/null
+echo -e "$mwv[$wtlკრიტიკული$mwv]: SQLi ინექცირებადი ბმული ($ttr${sqlinj}$mwv) ფეილოადი ($wtl${tamper[i]}$mwv)$blank"
+done
+done
+else
+echo -e "[-] SQLi სისუსტეები არ გააჩნია თქვენს მიერ მითითებულ ბმულს"
+fi
+
+}
+echo -e "$blink_start
+           ${mwv}█████${wtl}╗${mwv} ██████${wtl}╗${mwv}  █████${wtl}╗${mwv} ███${wtl}╗${mwv}  ██${wtl}╗${mwv} █████${wtl}╗${mwv}  ██████${wtl}╗
+          ${mwv}██${wtl}╔══${mwv}██${wtl}╗${mwv}██${wtl}╔══${mwv}██${wtl}╗${mwv}██${wtl}╔══${mwv}██${wtl}╗${mwv}████${wtl}╗ ${mwv}██${wtl}║${mwv}██${wtl}╔══${mwv}██${wtl}╗${mwv}██${wtl}╔════╝
+          ${mwv}██${wtl}║  ${mwv}${wtl}╚═╝${mwv}██████${wtl}╔╝${mwv}██${wtl}║  ${mwv}██${wtl}║${mwv}██${wtl}╔${mwv}██${wtl}╗${mwv}██${wtl}║${mwv}██${wtl}║${mwv}  ██${wtl}║╚${mwv}█████${wtl}╗ 
+          ${mwv}██${wtl}║  ${mwv}██${wtl}╗${mwv}██${wtl}╔══${mwv}██${wtl}╗${mwv}██${wtl}║  ${mwv}██${wtl}║${mwv}██${wtl}║╚${mwv}████${wtl}║${mwv}██${wtl}║${mwv}  ██${wtl}║${mwv} ${wtl}╚═══${mwv}██${wtl}╗
+          ${wtl}╚${mwv}█████${wtl}╔╝${mwv}██${wtl}║  ${mwv}██${wtl}║╚${mwv}█████${wtl}╔╝${mwv}██${wtl}║${mwv} ${wtl}╚${mwv}███${wtl}║╚${mwv}█████${wtl}╔╝${mwv}██████${wtl}╔╝
+           ${wtl}╚════╝ ╚═╝  ╚═╝ ╚════╝ ╚═╝  ╚══╝ ╚════╝ ╚═════╝$blink_stop"
+
+echo ""
+echo -e " $mwv[$wtl-------------------------------------------------------------$mwv]$blank"
+echo -e " $mwv[$wtl---$mwv]$wtl      ${mwv}Cron0s Web-Vuln-Scanner With Kathedral         $mwv[$wtl---$mwv]$blank"
+echo -e " $mwv[$wtl---$mwv]$wtl                 $mwv კოდერი:$wtl Pwn3Xpert                  $mwv[$wtl---$mwv]$blank"
+echo -e " $mwv[$wtl---$mwv]$wtl    $mwv შექმნილია „კიბერ უსაფრთხოების ჯგუფის“ მიერ$wtl      $mwv[$wtl---$mwv]$blank"
+echo -e " $mwv[$wtl-------------------------------------------------------------$mwv]$blank"
+echo -e " $mwv[$wtl---$mwv]               $(anonymousing)                 $mwv[$wtl---$mwv]$blank"
+echo -e " $mwv[$wtl-------------------------------------------------------------$mwv]$blank"
+
+echo ""
+echo -e " $wtlტესტირების ბმულები:"
+echo "               (SQLi)==> testphp.vulnweb.com"
+echo "               (XSS)===> xss-game.appspot.com"
+ctrl
+echo -ne "$yvt[$wtl$title$yvt]@[$wtl$app$yvt]=$wtl($ttrმიუთითე ბმული$wtl)$yvt=>$blank "
+read url
+starting
