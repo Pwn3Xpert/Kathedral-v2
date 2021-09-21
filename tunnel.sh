@@ -16,11 +16,11 @@ tor_start
 
 sleep 2 
 
-# destinations you do not want routed through Tor
+
 NON_TOR="192.168.1.0/24 192.168.0.0/24"
-# the UID Tor runs as, change this accordingly for your OS
+
 TOR_UID="43"
-# Tor's TransPort
+
 TRANS_PORT="9040"
 iptables -F
 iptables -t nat -F
