@@ -62,20 +62,20 @@ else
 echo -e $mwv "[${wtl}+$mwv]: ინტერნეტთან კავშირი : დამყარებულია";
     sleep 1  
 fi
-echo -e "
-$mwv _______               ${wtl}__  $mwv __  __         __   __             __              __ 
-$mwv|_     _|.-----.----.${wtl}_|  |_$mwv|  |/  |.---.-.|  |_|  |--.-----.--|  |.----.---.-.|  |
-$mwv  |   |  |  _  |   _${wtl}|_    _|$mwv     < |  _  ||   _|     |  -__|  _  ||   _|  _  ||  |
-$mwv  |___|  |_____|__|   ${wtl}|__| $mwv|__|\__||___._||____|__|__|_____|_____||__| |___._||__|
+#echo -e "
+#$mwv _______               ${wtl}__  $mwv __  __         __   __             __              __ 
+#$mwv|_     _|.-----.----.${wtl}_|  |_$mwv|  |/  |.---.-.|  |_|  |--.-----.--|  |.----.---.-.|  |
+#$mwv  |   |  |  _  |   _${wtl}|_    _|$mwv     < |  _  ||   _|     |  -__|  _  ||   _|  _  ||  |
+#$mwv  |___|  |_____|__|   ${wtl}|__| $mwv|__|\__||___._||____|__|__|_____|_____||__| |___._||__|
                                                                                 
-${mwv}0x54 0x6F 0x72 ${wtl}[0x2B]$mwv 0x4B 0x61 0x74 0x68 0x65 0x64 0x72 0x61 0x6C 
-$mwv[${wtl}----------------------------------------------------------------$mwv]
-$mwv[${wtl}---$mwv]    პროექტი შექმნილია ${wtl}CSG$mwv ჯგუფის პენ-ტესტერებისთვის     [${wtl}---$mwv]
-$mwv[${wtl}---$mwv]                 პროექტის ავტორი: Pwn${wtl}3Xpert$mwv             [${wtl}---$mwv]
-$mwv[${wtl}---$mwv] მრავალ ფუნქციური ხელსაწყო „${wtl}კათედრალი$mwv“ ვერსია 2 (${wtl}ბეტა$mwv)  [${wtl}---$mwv]
-$mwv[${wtl}----------------------------------------------------------------$mwv]
+#${mwv}0x54 0x6F 0x72 ${wtl}[0x2B]$mwv 0x4B 0x61 0x74 0x68 0x65 0x64 0x72 0x61 0x6C 
+#$mwv[${wtl}----------------------------------------------------------------$mwv]
+#$mwv[${wtl}---$mwv]    პროექტი შექმნილია ${wtl}CSG$mwv ჯგუფის პენ-ტესტერებისთვის     [${wtl}---$mwv]
+#$mwv[${wtl}---$mwv]                 პროექტის ავტორი: Pwn${wtl}3Xpert$mwv             [${wtl}---$mwv]
+#$mwv[${wtl}---$mwv] მრავალ ფუნქციური ხელსაწყო „${wtl}კათედრალი$mwv“ ვერსია 2 (${wtl}ბეტა$mwv)  [${wtl}---$mwv]
+#$mwv[${wtl}----------------------------------------------------------------$mwv]
 
-"
+#"
 #cpan install Switch JSON LWP::UserAgent > /dev/null 2>&1
 #perl default/Kathoxy/Kathoxy.pl install > /dev/null 2>&1
 #if [ $? -ne 1 ]; then
@@ -83,14 +83,15 @@ $mwv[${wtl}----------------------------------------------------------------$mwv]
 #chknet
 #    sleep 1
 #else
-echo -e "$yvt [${wtl}*$yvt]: თქვენი რეალური აიპი მისამართი შეცვლილია "
+#echo -e "$yvt [${wtl}*$yvt]: თქვენი რეალური აიპი მისამართი შეცვლილია "
+#echo -e "$yvt [${wtl}*$yvt]: თქვენი რეალური აიპი მისამართი შეცვლილია "
 #echo -e "$yvt [${wtl}*$yvt]: თქვენს ანონიმურობაზე ზრუნავს ${wtl}TOR${yvt}-ი!";
 #    sleep 1  
 #perl default/Kathoxy/Kathoxy.pl start > /dev/null 2>&1
 #sleep 1
 #perl default/Kathoxy/Kathoxy.pl stop > /dev/null 2>&1
 #perl default/Kathoxy/Kathoxy.pl start > /dev/null 2>&1
-echo -e "$mwv [${wtl}+$mwv]: თქვენი ამჟამინდელი მისამართია: $wtl $myip"
+#echo -e "$mwv [${wtl}+$mwv]: თქვენი ამჟამინდელი მისამართია: $wtl $myip"
 
 #fi
 #cpan install Switch JSON LWP::UserAgent > /dev/null 2>&1
@@ -260,20 +261,14 @@ menuHighlight=$mwv
 menuInit() {
   borderup="\033[0m\033[0;32m\e[92m┌──────────────────────────────────────────────────────────┐"
   centerA="\e[92m│                                                          │"
-  centerB="\e[92m│         \e[93mინსტალაცია: \e[91mhttp://\e[92m127.0.0.1:8081\e[91m/install\e[92m        │"
 #  centerB="\e[92m│ \e[92mშექმნილია „\e[91mკიბერ უსაფრთხოების ჯგუფის\e[92m“ პენ-ტესტერებისთვის\e[92m │"
   centerC="\e[92m│                \e[93mპროექტის ავტორი: \e[92mPwn\e[91m3Xpert\e[92m                │"
   centerD="\e[92m│                                                          │"
-  centerE="\e[92m│             \e[93mმისამართი: \e[91mhttp://\e[92m127.0.0.1:8081\e[92m             │"
-  centerF="\e[92m│            \e[93mპროქსი: \e[91mhttp://\e[92m127.0.0.1:8081\e[91m/proxy\e[92m           │"
-  centerG="\e[92m│                \e[39mვებ-პლატფორმული კათედრალი\e[92m                 │"
-  centerH="\e[92m├──────────────────────────────────────────────────────────┤"
-
   borderdown="└──────────────────────────────────────────────────────────┘"
     menuItemCount=${#menuItems[@]}
     menuLastItem=$((menuItemCount-1))
     menuHeaderText=`printf "%-${menuWidth}s" "\e[92m${borderup}\n    │$menuTitle│"`
-    menuFooterText=`printf "%-${menuWidth}s" "\033[0m\033[0;92m│$menuFooter\n    \033[0m\033[0;32m$centerD\n    \033[0m\033[0;32m$centerC\n    $centerH\n    $centerG\n    $centerH\n    $centerB\n    $centerF\n    $centerE\n    ${borderdown}\n"`
+    menuFooterText=`printf "%-${menuWidth}s" "\033[0m\033[0;92m│$menuFooter\n    \033[0m\033[0;32m$centerD\n    \033[0m\033[0;32m$centerC\n    ${borderdown}\n"`
     local marginSpaces=$((menuMargin-1))
     local menuSpaces=$((menuWidth-2))
     local leftGap=`printf "%${marginSpaces}s" ""`
@@ -412,27 +407,24 @@ param(){
   echo -e " მაგ. use pentest
   $wtl  │$blank
   $wtl  │$blank
-  $wtl  ├──$mwv pentest$yvt >$blank
-  $wtl  │      ├──$mwv webscan$blank
-  $wtl  │      ├──$mwv iprange$blank
-  $wtl  │      ├──$mwv portscan$blank
-  $wtl  │      ├──$mwv vuln$blank
-  $wtl  │      └──$mwv subdomain$blank
-  $wtl  └──$mwv database$yvt >$blank
-  $wtl          └──$mwv number$blank
+  $wtl  └──$mwv pentest$yvt >$blank
+  $wtl         ├──$mwv webscan$blank
+  $wtl         ├──$mwv iprange$blank
+  $wtl         ├──$mwv portscan$blank
+  $wtl         ├──$mwv vuln$blank
+  $wtl         └──$mwv subdomain$blank
 "
 }
 paramw(){
   echo -e " მაგ. use pentest param
   $wtl  │$blank
   $wtl  │$blank
-  $wtl  ├──$mwv pentest$yvt >$blank
-  $wtl  │      ├──$mwv webscan$blank
-  $wtl  │      ├──$mwv iprange$blank
-  $wtl  │      ├──$mwv portscan$blank
-  $wtl  │      ├──$mwv vuln$blank
-  $wtl  │      └──$mwv subdomain$blank
-  $wtl  └──$mwv database$yvt >$blank
+  $wtl  └──$mwv pentest$yvt >$blank
+  $wtl         ├──$mwv webscan$blank
+  $wtl         ├──$mwv iprange$blank
+  $wtl         ├──$mwv portscan$blank
+  $wtl         ├──$mwv vuln$blank
+  $wtl         └──$mwv subdomain$blank
 "
 }
 
@@ -440,9 +432,7 @@ paramd(){
   echo -e " მაგ. use database param 
   $wtl  │$blank
   $wtl  │$blank
-  $wtl  ├──$mwv pentest$yvt >$blank
-  $wtl  └──$mwv database$yvt >$blank
-  $wtl          └──$mwv number$blank
+  $wtl  └──$mwv pentest$yvt >$blank
 "
 }
 set_module(){
@@ -452,7 +442,6 @@ $mwv[+]$RESET მოდულები:
 echo -e $mwv"┌────────────┬────────────────────────────────────────────────────┐"
 echo -e $mwv"│$wtl ip$mwv         │ $yvtდაამატეთ აიპი მისამართები როგორც შიდა ისე გარე$mwv     │"
 echo -e $mwv"│$wtl url$mwv        │ $yvtდაამატეთ სრული ბმული გარდა პროტოკოლისა მაგ.$wtl site.ge$mwv│"
-echo -e $mwv"│$wtl number$mwv     │ $yvtნომერი აუცილებლად უნდა იყოს ქართული სუფიქსის$mwv       │"
 echo -e $mwv"└────────────┴────────────────────────────────────────────────────┘"
 
 }
@@ -472,8 +461,6 @@ echo -e $mwv"│$wtl hostinfo$mwv   │ $yvtსაბაზისო ინფ�
 echo -e $mwv"│$wtl vuln$mwv       │ $yvtსისუსტეებზე მორგებული ექსპლოიტების სია$mwv             │"
 echo -e $mwv"│$wtl subdomain$mwv  │ $yvtქვედომაინების ძებნა $wtl(Google)$mwv                       │"
 #echo -e $mwv"│$wtl cloudflare$mwv │ $yvtქლაუდფლაერიდან რეალური აიპი მისამართის დადგენა$mwv     │"
-echo -e $mwv"├────────────┼────────────────────────────────────────────────────┤"
-echo -e $mwv"│$lrj number$mwv     │ $yvtნომრის ძებნა$mwv                                       │"
 echo -e $mwv"└────────────┴────────────────────────────────────────────────────┘"
 
 }
@@ -993,10 +980,6 @@ vuln(){
 running=$(nmap --script nmap-vulners -sV -T5 ${host} | grep -w -v "Starting Nmap 7.70" | grep -w -v "Warning:" |sed "s/Service detection performed. Please report any incorrect results at https:\/\/nmap.org\/submit\/ .//g;s/Nmap scan report for /ჰოსტის სახელი: /g" | grep -w -v Host | grep -w -v "Not shown" | grep -w -v "Nmap done: 1 IP address" | sed "s/vulners:/მორგებადი ექსპლოიტები:/g;s/ open / გახსნილი /g;s/PORT/პორტი/g;s/STATE/სტატუსი/g;s/SERVICE/პროტოკოლი/g;s/VERSION/ვერსია/g;s/|//g;s/_/ /g;s/https:\/\/vulners.com\/cve\//https:\/\/cxsecurity.com\/cveshow\//g" | grep "CVE" | uniq | sort | sed 's/\t/ /g')
 echo -e "$mwv[+] დაემატა მოდული"
 }
-nomeri(){
-running=$(curl 'https://simpleapi.info/apps/numbers-info/info.php' -H 'Host: simpleapi.info' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0' -H 'Accept: application/json, text/javascript, */*; q=0.01' -H 'Accept-Language: en-US,en;q=0.5' --compressed -H 'Referer: http://simpleapi.info/apps/numbers-info/web/index.php' -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' -H 'Origin: http://simpleapi.info' -H 'Connection: keep-alive' -H 'Pragma: no-cache' -H 'Cache-Control: no-cache' --data "number=$number" -s | sed 's/{//g;s/}//g;s/"//g;s/yes//g;s/res//g;s/://g;s/info//g;s/name//g;s/,//g;s/image//g;s/noerr#006/[-] ვერ მოიძებნა/g;s/noerr#004/[X] შეიყვანე ნომერი!/g')
-echo -e "$mwv[+] დაემატა მოდული"
-}
 subdomain(){
 running=$(dmitry -s $url | awk -F/ '{print $2}' | awk "/Google/"> /dev/null 2>&1 ; png="$?" ; if [ $png == "0" ] ; then dmitry -s $url | sed "s/HostName://g;s/$url/$url<\/br>/g;s/ERROR: Unable to locate Host IP addr. for -s/თქვენ უკვე სკანირების ლიმიტს გადააცილეთ,/g;s/Continuing with limited modules/სცადეთ მოგვიანებით./g;/^$/d" | grep -w -v -e "-s" -e "HostIP" -e "All" -e "Gathered Subdomain information for" -e "Deepmagic" -e "\"There" -e "---------------------------------" -e " Gathered" -e "Searching" -e "Found" -e "Searched" | sed '/^$/d' | sed 's/HostName:$url//g' ; elif [ $png == "1" ] ; then echo -e $yvt "ქვე-დომეინი ვერ მოიძებნა" ; elif [ $png == "2" ] ; then echo -e $wtl "წარმოიქმნა გაუთვალისწინებელი შეცდომა"; fi)
 echo -e "$mwv[+] დაემატა მოდული"
@@ -1106,8 +1089,6 @@ banner
                 paramw
             elif [[ $cnt_1 == "use" ]] && [[ $cnt_2 == "pentest" ]] && [[ $cnt_3 == $cnt_3 ]];then
                 paramw
-            elif [[ $cnt_1 == "use" ]] && [[ $cnt_2 == "database" ]] && [[ $cnt_3 == "number" ]];then
-                nomeri
             elif [[ $cnt_1 == "use" ]] && [[ $cnt_2 == "database" ]];then
                 paramd
             elif [[ $cnt_1 == "use" ]] && [[ $cnt_2 == "database" ]] && [[ $cnt_3 == $cnt_3 ]];then
@@ -1384,8 +1365,316 @@ starting
 }
 
 multihopproxy() {
-  #
-  echo "X"
+#!/bin/bash
+mwv="\e[92m"
+wtl="\e[91m"
+lrj="\e[34m"
+ttr="\e[30m"
+yvt="\e[93m"
+blank="\e[39m"
+app=$0
+torrange="192.168.0.0/16 172.16.0.0/12 10.0.0.0/8"
+startup=$(echo "$(pwd)/${app}" | sed 's/\/.\//\//g')
+echo -e "
+$mwv _______               ${wtl}__  $mwv __  __         __   __             __              __ ${blank}
+$mwv|_     _|.-----.----.${wtl}_|  |_$mwv|  |/  |.---.-.|  |_|  |--.-----.--|  |.----.---.-.|  |${blank}
+$mwv  |   |  |  _  |   _${wtl}|_    _|$mwv     < |  _  ||   _|     |  -__|  _  ||   _|  _  ||  |${blank}
+$mwv  |___|  |_____|__|   ${wtl}|__| $mwv|__|\__||___._||____|__|__|_____|_____||__| |___._||__|${blank}
+
+                                ${ttr}███████ ${blank}   
+                            ${ttr}▄▄▄▄███████▄▄▄▄${blank}
+                               ▐░▀░▀░▀░▌ 
+                               ${wtl}▐▄▄▄▄▄▄▄▌${blank}
+                         ▄▀▀▀█▒▐░${wtl}▀▀${blank}▄${wtl}▀▀${blank}░▌▒█▀▀▀▄
+                         ▌▌▌▌▐▒▄▌░▄▄▄░▐▄▒▌▐▐▐▐
+        ${mwv}0x54 0x6F 0x72 ${wtl}[0x2B]$mwv 0x4B 0x61 0x74 0x68 0x65 0x64 0x72 0x61 0x6C${blank} 
+        
+        $mwv[${wtl}----------------------------------------------------------------$mwv]${blank}  
+        $mwv[${wtl}---$mwv]        პროდუქტი წარმოადგენს ${wtl}Kathedral$mwv-ის საკუთრებას    [${wtl}---$mwv]${blank}
+        $mwv[${wtl}---$mwv]                 პროექტის ავტორი: Pwn${wtl}3Xpert$mwv             [${wtl}---$mwv]${blank}
+        $mwv[${wtl}----------------------------------------------------------------$mwv]${blank}
+
+        $mwv[${yvt}ინფო$mwv]: ${yvt}ნავიგაციის სანახავად გაწერეთ: 
+
+${mwv}-_*${mwv}/${wtl}Kathopia${mwv}/>${wtl}# ${mwv}$0 ${wtl}-h ${mwv}ან ${wtl}--help${blank}"
+
+
+if [[ ! -z `dpkg -l |grep resolvconf` ]]; then 
+    resolvconf_support=true;
+else
+    resolvconf_support=false;
+fi
+install() {
+if [[ -n $(cat /etc/os-release | grep "kali") ]]
+then
+    echo "მიმდინარეობს ინსტალაცია გთხოვთ დაიცადოთ..."
+    apt  install --force-yes secure-delete tor libecj-java libservlet3.0-java libgetopt-java libservlet3.0-java glassfish-javaee ttf-dejavu libjbigi-jni > /dev/null 2>&1
+    wget http://ftp.us.debian.org/debian/pool/main/j/jetty8/libjetty8-java_8.1.16-4_all.deb > /dev/null 2>&1
+    dpkg -i libjetty8-java_8.1.16-4_all.deb > /dev/null 2>&1
+    apt install -f > /dev/null 2>&1
+fi
+}
+startup() {
+read -p "გსურთ დაემატოს სტარტაპში რათა სისტემის ჩატვირთვისთანავე ავტომატურად ჩაიტვირთოს kathopia? მაშინ დააჭირეთ (Y/y)-ს ხოლო თუ გსურთ ამოშალოთ მაშინ დააჭირეთ (N/n)-ს" -n 1 -r
+echo
+if [[ ! $REPLY =~ ^[Yy]$ ]]
+then
+cp {startup} /etc/init.d
+fi
+}
+clearlog() {
+       echo -e $yvt "[${wtl}!$yvt]: $wtlმიმდინარეობს ქეშების დასუფთავება. შესაძლოა ამას დასჭირდეს რამოდენიმე წუთი"
+       sleep 5
+       rm /var/log/auth.log
+       truncate -s 0 /var/log/auth.log
+       echo '' > /var/log/auth.log
+       shred /var/log/auth.log
+       rm -rf ~/.BurpSuite
+       rm -rf ~/.ssh
+       ln /dev/null /var/log/auth.log -sf
+       shred -zu /var/log/auth.log
+       echo "" > ~/.bash_history
+       echo 0  > /proc/sys/vm/oom_dump_tasks
+       echo 1  > /proc/sys/vm/oom_kill_allocating_task
+       echo 1  > /proc/sys/vm/overcommit_memory
+       echo 3  > /proc/sys/vm/drop_caches
+       echo 1024 > /proc/sys/vm/min_free_kbytes
+       echo '' > /var/log/messages 
+       echo '' > /var/log/auth.log 
+       echo '' > /var/log/kern.log 
+       echo '' > /var/log/cron.log 
+       echo '' > /var/log/maillog 
+       echo '' > /var/log/boot.log 
+       echo '' > /var/log/mysqld.log 
+       echo '' > /var/log/qmail 
+       echo '' > /var/log/httpd 
+       echo '' > /var/log/lighttpd 
+       echo '' > /var/log/secure 
+       echo '' > /var/log/utmp 
+       echo '' > /var/log/wtmp 
+       echo '' > /var/log/yum.log
+       echo '' > /var/log/system.log 
+       echo '' > /var/log/DiagnosticMessages
+       echo '' > /Library/Logs 
+       echo '' > /Library/Logs/DiagnosticReports
+       echo '' > ~/Library/Logs 
+       echo '' > ~/Library/Logs/DiagnosticReports
+       shred -zu /var/log/messages
+       shred -zu /var/log/auth.log 
+       shred -zu /var/log/kern.log 
+       shred -zu /var/log/cron.log 
+       shred -zu /var/log/maillog
+       shred -zu /var/log/boot.log 
+       shred -zu /var/log/mysqld.log 
+       shred -zu /var/log/qmail 
+       shred -zu /var/log/httpd 
+       shred -zu /var/log/lighttpd 
+       shred -zu /var/log/secure
+       shred -zu /var/log/utmp
+       shred -zu /var/log/wtmp
+       shred -zu /var/log/system.log
+       shred -zu /var/log/DiagnosticMessages 
+       shred -zu /Library/Logs
+       shred -zu /Library/Logs/DiagnosticReports
+       shred -zu ~/Library/Logs 
+       shred -zu ~/Library/Logs/DiagnosticReports 
+       sdmem -fllv
+       killall -q chrome dropbox iceweasel skype icedove thunderbird firefox chromium xchat transmission deluge pidgin pidgin.orig
+       bleachbit -c adobe_reader.cache chromium.cache chromium.current_session chromium.history elinks.history emesene.cache epiphany.cache firefox.url_history flash.cache flash.cookies google_chrome.cache google_chrome.history  links2.history opera.cache opera.search_history opera.url_history &> /dev/null
+}
+ip() {
+myip=$(curl -s "ifconfig.me")
+echo -e " ${mwv}[${wtl}+$mwv]: შენი ტუნელირებადი აიპია: ${wtl}${myip}${blank}" 
+}
+
+activation() {
+    if [ $(id -u) -ne 0 ]; then
+        exit 1
+    fi
+    grep -q -x 'RUN_DAEMON="yes"' /etc/default/tor
+    if [ $? -ne 0 ]; then
+        echo "მიმდინარეობს TOR-ის კონფიგურირება დასრულების შემდეგ ხელახლა ჩატვირთეთ აპლიკაცია..."
+        service tor restart
+        exit 1
+    fi  
+    echo -e "$yvt [${wtl}*$yvt]: თქვენი რეალური აიპი მისამართი შეცვლილია "
+    sed -i '/^.*\#Kathopia Has HERE$/d' /etc/sysctl.conf
+    echo "net.ipv6.conf.all.disable_ipv6 = 1 #Kathopia Has HERE" >> /etc/sysctl.conf
+    echo "net.ipv6.conf.default.disable_ipv6=1 #Kathopia Has HERE" >> /etc/sysctl.conf
+    sysctl -p > /dev/null
+    if [ ! -e /var/run/tor/tor.pid ]; then
+        service network-manager force-reload > /dev/null 2>&1
+        killall dnsmasq > /dev/null 2>&1
+        killall nscd > /dev/null 2>&1   
+        service tor start
+        sleep 1
+    fi
+    if ! [ -f /etc/network/iptables.rules ]; then
+        iptables-save > /etc/network/iptables.rules
+    fi
+    
+    iptables -F
+    iptables -t nat -F
+    
+    if [ "$resolvconf_support" = false ] 
+    then
+        cp /etc/resolv.conf /etc/resolv.conf.bak
+        touch /etc/resolv.conf
+        echo -e 'nameserver 127.0.0.1\nnameserver 209.222.18.222\nnameserver 209.222.18.218' > /etc/resolv.conf
+    else
+        cp /etc/resolvconf/resolv.conf.d/head{,.bak}
+        echo -e 'nameserver 127.0.0.1\nnameserver 209.222.18.222\nnameserver 209.222.18.218' >> /etc/resolvconf/resolv.conf.d/head
+        resolvconf -u
+    fi
+    echo -e "$yvt [${wtl}*$yvt]: თქვენს ანონიმურობაზე ზრუნავს ${wtl}TOR${yvt}-ი!";
+
+    iptables -t nat -A OUTPUT -m owner --uid-owner debian-tor -j RETURN
+    iptables -t nat -A OUTPUT -p udp --dport 53 -j REDIRECT --to-ports 53
+    iptables -t nat -A OUTPUT -p tcp --dport 53 -j REDIRECT --to-ports 53
+    iptables -t nat -A OUTPUT -p udp -m owner --uid-owner debian-tor -m udp --dport 53 -j REDIRECT --to-ports 53
+    iptables -t nat -A OUTPUT -p tcp -d 10.192.0.0/10 -j REDIRECT --to-ports 9040
+    iptables -t nat -A OUTPUT -p udp -d 10.192.0.0/10 -j REDIRECT --to-ports 9040
+    for range in $torrange 127.0.0.0/9 127.128.0.0/10; do
+    iptables -t nat -A OUTPUT -d $range -j RETURN
+    done
+    iptables -t nat -A OUTPUT -p tcp --syn -j REDIRECT --to-ports 9040
+    iptables -t nat -A OUTPUT -p udp -j REDIRECT --to-ports 9040
+    iptables -t nat -A OUTPUT -p icmp -j REDIRECT --to-ports 9040
+    iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+    for range in $torrange 127.0.0.0/8; do
+    iptables -A OUTPUT -d $range -j ACCEPT
+    done
+    iptables -A OUTPUT -m owner --uid-owner debian-tor -j ACCEPT
+    iptables -A OUTPUT -j REJECT
+    echo -e "$mwv [${wtl}+$mwv]: თქვენი ამჟამინდელი ტუნელირებადი მისამართია: $wtl $myip"
+    echo -e "$mwv [${wtl}+$mwv]: თქვენი ტრაფიკის ტუნელირება წარმატებით დასრულდა თქვენ უკვე ანონიმური ხართ."
+}
+random() {
+service tor reload > /dev/null 2>&1
+torreload="$?"
+ if [ $torreload == "0" ]
+then
+    echo -e "$mwv [${yvt}ინფო$mwv]: ${mwv}თქვენი აიპი მისამართი შეიცვალა${blank}"
+    ip
+elif [ $torreload == "1" ]
+then
+    echo -e $yvt "[${wtl}!$yvt]: ${wtl}tor.service არარის აქტიური, რომ მოხდეს გადატვირთვა"
+fi
+}
+
+status() {
+if [[ $(service tor status  | grep 'Active: active') ]]
+then
+    echo -e "$mwv [${yvt}ინფო$mwv]: ${mwv}tor.service აქტიურია${blank}"
+else
+
+    echo -e $yvt "[${wtl}!$yvt]: ${wtl}tor.service არარის აქტიური, გთხოვთ გააქტიუროთ ხელით."
+fi
+
+}
+deactivation() {
+    echo -e "$mwv [${wtl}-$mwv]: მიმდინარეობს აპლიკაციის დეაქტივაცია"
+
+    iptables -F
+    iptables -t nat -F
+    
+    if [ -f /etc/network/iptables.rules ]; then
+        iptables-restore < /etc/network/iptables.rules
+        rm /etc/network/iptables.rules
+    fi
+    if [ "$resolvconf_support" = false ] 
+    then
+        if [ -e /etc/resolv.conf.bak ]; then
+            rm /etc/resolv.conf
+            cp /etc/resolv.conf.bak /etc/resolv.conf
+        fi
+    else
+        mv /etc/resolvconf/resolv.conf.d/head{.bak,}
+        resolvconf -u
+    fi
+    
+    service tor stop
+    sed -i '/^.*\#Kathopia Has HERE$/d' /etc/sysctl.conf
+    sysctl -p 
+
+    service network-manager force-reload > /dev/null 2>&1
+    service nscd start > /dev/null 2>&1
+    service dnsmasq start > /dev/null 2>&1
+    }
+checknet() {
+        chknet() {
+        ping -c 1 8.8.4.4 > /dev/null 2>&1
+        png="$?"
+         if [ $png == "0" ]
+        then
+        echo -e $lrj "[${wtl}X$lrj]: წარმოიქმნა სინტაქსური პრობლემა"
+        read continue
+            sleep 0.5
+            exit
+        elif [ $png == "1" ]
+        then
+            echo -e $yvt "[${wtl}!$yvt]: თქვენ ხართ ლოკალურ ქსელში"
+            sleep 0.5
+            exit
+        elif [ $png == "2" ]
+        then
+        echo -e $wtl "[-]: თქვენ არ ხართ ინტერნეტთან დაკავშირებული!"
+        read continue
+            sleep 0.5
+            exit
+        fi
+        }
+    echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
+    if [ $? -ne 0 ]; then
+    echo -e $wtl "[-]: ინტერნეტთან კავშირი : დაუმყარებელია";
+    chknet
+        sleep 1
+    else
+    echo -e $mwv "[${wtl}+$mwv]: ინტერნეტთან კავშირი : დამყარებულია";
+        sleep 1  
+    fi
+    }
+    deactivation
+    sleep 1
+    checknet
+    activation
+if [[ $* == "-s" ]] || [[ $* == "--start" ]]; then
+    activation
+    checknet
+elif [[ $* == "start" ]] || [[ $* == "--start" ]]; then
+    activation
+    checknet
+elif [[ $* == "stop" ]] || [[ $* == "--stop" ]]; then
+    deactivation
+    checknet
+elif [[ $* == "-x" ]] || [[ $* == "--stop" ]]; then
+    deactivation
+    checknet
+elif [[ $* == "-r" ]] || [[ $* == "--randomip" ]]; then
+    random
+    checknet
+elif [[ $* == "random" ]] || [[ $* == "--randomip" ]]; then
+    random
+    checknet
+elif [[ $* == "-R" ]] || [[ $* == "--restart" ]]; then
+    deactivation
+    sleep 1
+    checknet
+    activation
+elif [[ $* == "-c" ]] || [[ $* == "--checkmynet" ]]; then
+    checknet
+     ip
+elif [[ $* == "-S" ]] || [[ $* == "--status" ]]; then
+    status
+elif [[ $* == "status" ]] || [[ $* == "--status" ]]; then
+    status
+elif [[ $* == "-i" ]] || [[ $* == "--install" ]]; then
+    install
+elif [[ $* == "-si" ]] || [[ $* == "--startup" ]]; then
+    startup
+elif [[ $* == "-cl" ]] || [[ $* == "--clearlog" ]]; then
+    clearlog
+fi
 }
 update() {
 echo "update"
@@ -1399,16 +1688,12 @@ menuItems=(
     "     კათედრალის ტერმინალი     "
     "    კათედრალის ვებ-სკანერი    "
     "      ვირტუალური პროქსი       "
-    "        რევერსული შელი        "
-    "          განახლება           "
     "           გათიშვა            "
 )
 menuActions=(
 K-CLI
 Cronos
 multihopproxy
-revshell
-update
 exit
 )
 
