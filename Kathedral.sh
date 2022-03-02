@@ -22,149 +22,6 @@ lrj="\e[34m"
 fs="\e[96m"
 myip=`curl -s ifconfig.io`
 reset
-echo -e $yvt "[${wtl}*$yvt]: ინტერნეტთან/ლოკალთან კავშირის გადამოწმება..."
-function chknet() {
-ping -c 1 8.8.4.4 > /dev/null 2>&1
-png="$?"
- if [ $png == "0" ]
-then
-echo -e $lrj "[${wtl}X$lrj]: წარმოიქმნა სინტაქსური პრობლემა"
-read continue
-    sleep 0.5
-elif [ $png == "1" ]
-then
-    echo -e $yvt "[${wtl}!$yvt]: თქვენ ხართ ლოკალურ ქსელში"
-sleep 0.5
-elif [ $png == "2" ]
-then
-echo -e $wtl "[-]: თქვენ არ ხართ ინტერნეტთან დაკავშირებული!"
-read continue
-    sleep 0.5
-fi
-}
-if [ $(id -u) != "0" ]; then
-    sleep 0.5
-    echo -e $wtl "[-]: მომხმარებელი $USER" ;
-    echo -e $wtl "[X]: თქვენ არ ხართ ავტორიზირებული როგორც ROOT-ი";
-    echo ""
-    sleep 1
-    exit
-else
-   echo -e $mwv "[${wtl}+$mwv]: მომხმარებელი ${wtl}$USER" ;
-sleep 0.5
-fi
-echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
-if [ $? -ne 0 ]; then
-echo -e $wtl "[-]: ინტერნეტთან კავშირი : დაუმყარებელია";
-chknet
-    sleep 1
-else
-echo -e $mwv "[${wtl}+$mwv]: ინტერნეტთან კავშირი : დამყარებულია";
-    sleep 1  
-fi
-#echo -e "
-#$mwv _______               ${wtl}__  $mwv __  __         __   __             __              __ 
-#$mwv|_     _|.-----.----.${wtl}_|  |_$mwv|  |/  |.---.-.|  |_|  |--.-----.--|  |.----.---.-.|  |
-#$mwv  |   |  |  _  |   _${wtl}|_    _|$mwv     < |  _  ||   _|     |  -__|  _  ||   _|  _  ||  |
-#$mwv  |___|  |_____|__|   ${wtl}|__| $mwv|__|\__||___._||____|__|__|_____|_____||__| |___._||__|
-                                                                                
-#${mwv}0x54 0x6F 0x72 ${wtl}[0x2B]$mwv 0x4B 0x61 0x74 0x68 0x65 0x64 0x72 0x61 0x6C 
-#$mwv[${wtl}----------------------------------------------------------------$mwv]
-#$mwv[${wtl}---$mwv]    პროექტი შექმნილია ${wtl}CSG$mwv ჯგუფის პენ-ტესტერებისთვის     [${wtl}---$mwv]
-#$mwv[${wtl}---$mwv]                 პროექტის ავტორი: Pwn${wtl}3Xpert$mwv             [${wtl}---$mwv]
-#$mwv[${wtl}---$mwv] მრავალ ფუნქციური ხელსაწყო „${wtl}კათედრალი$mwv“ ვერსია 2 (${wtl}ბეტა$mwv)  [${wtl}---$mwv]
-#$mwv[${wtl}----------------------------------------------------------------$mwv]
-
-#"
-#cpan install Switch JSON LWP::UserAgent > /dev/null 2>&1
-#perl default/Kathoxy/Kathoxy.pl install > /dev/null 2>&1
-#if [ $? -ne 1 ]; then
-#echo -e $wtl "[-]: ტორთან კავშირი ვერ დამყარდა !";
-#chknet
-#    sleep 1
-#else
-#echo -e "$yvt [${wtl}*$yvt]: თქვენი რეალური აიპი მისამართი შეცვლილია "
-#echo -e "$yvt [${wtl}*$yvt]: თქვენი რეალური აიპი მისამართი შეცვლილია "
-#echo -e "$yvt [${wtl}*$yvt]: თქვენს ანონიმურობაზე ზრუნავს ${wtl}TOR${yvt}-ი!";
-#    sleep 1  
-#perl default/Kathoxy/Kathoxy.pl start > /dev/null 2>&1
-#sleep 1
-#perl default/Kathoxy/Kathoxy.pl stop > /dev/null 2>&1
-#perl default/Kathoxy/Kathoxy.pl start > /dev/null 2>&1
-#echo -e "$mwv [${wtl}+$mwv]: თქვენი ამჟამინდელი მისამართია: $wtl $myip"
-
-#fi
-#cpan install Switch JSON LWP::UserAgent > /dev/null 2>&1
-#perl default/Kathoxy/Kathoxy.pl install > /dev/null 2>&1
-#echo -e "$yvt [${wtl}*$yvt]: თქვენი რეალური აიპი მისამართი შეცვლილია "
-#echo -e "$yvt [${wtl}*$yvt]: თქვენს ანონიმურობაზე ზრუნავს ${wtl}TOR${yvt}-ი!"
-#perl default/Kathoxy/Kathoxy.pl start > /dev/null 2>&1
-#sleep 1
-#perl default/Kathoxy/Kathoxy.pl stop > /dev/null 2>&1
-#perl default/Kathoxy/Kathoxy.pl start > /dev/null 2>&1
-#echo -e "$mwv [${wtl}+$mwv]: თქვენი ამჟამინდელი მისამართია: $wtl $myip"
-#echo ""
-#echo ""
-#echo -en "${blank} #${wtl}4r3${blank}\U~R34dy? დააჭირეთ ${wtl}„Enter“${blank}-ს მენიუზე გადასასვლელად${mwv}"
-sleep 1
-if [[ $* == "-u" ]] || [[ $* == "--update" ]]; then
-  echo "X"
-fi
-if [[ $* == "-i" ]] || [[ $* == "--install" ]]; then
-echo -e "$yvt[${wtl}*$yvt]: ინტერნეტთან/ლოკალთან კავშირის გადამოწმება..."
-function chknet() {
-ping -c 1 8.8.4.4 > /dev/null 2>&1
-png="$?"
- if [ $png == "0" ]
-then
-echo -e $lrj "[${wtl}X$lrj]: წარმოიქმნა სინტაქსური პრობლემა"
-read continue
-    sleep 0.5
-elif [ $png == "1" ]
-then
-    echo -e $yvt "[${wtl}!$lrj]: თქვენ ხართ ლოკალურ ქსელში"
-sleep 0.5
-elif [ $png == "2" ]
-then
-echo -e $wtl "[-]: თქვენ არ ხართ ინტერნეტთან დაკავშირებული!"
-read continue
-    sleep 0.5
-fi
-}
-if [ $(id -u) != "0" ]; then
-    sleep 0.5
-    echo -e $wtl "[-]: მომხმარებელი $USER" ;
-    echo -e $wtl "[X]: თქვენ არ ხართ ავტორიზირებული როგორც ROOT-ი";
-    echo ""
-    sleep 1
-    exit
-else
-   echo -e $mwv "[${wtl}+$mwv]: მომხმარებელი $wtl$USER" ;
-sleep 0.5
-fi
-echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
-if [ $? -ne 0 ]; then
-echo -e $wtl "[-]: ინტერნეტთან კავშირი : დაუმყარებელია";
-chknet
-    sleep 1
-else
-echo -e $mwv "[${wtl}+$mwv]: ინტერნეტთან კავშირი : დამყარებულია";
-    sleep 1  
-fi
-echo -e $yvt "[${wtl}*$mwv]: გთხოვთ მოიცადოთ, მიმდინარეობს აპლიკაციის ინსტალაცია"
-
-nmap > /dev/null 2>&1 || apt install nmap -y > /dev/null 2>&1 
-tree > /dev/null 2>&1  || apt install tree -y > /dev/null 2>&1 
-netcat > /dev/null 2>&1 || apt install netcat -y > /dev/null 2>&1 
-host > /dev/null 2>&1 || apt install host -y > /dev/null 2>&1 
-git > /dev/null 2>&1 || apt install git -y > /dev/null 2>&1 
-cd /usr/share/nmap/scripts/
-git clone https://github.com/vulnersCom/nmap-vulners.git > /dev/null 2>&1
-git clone https://github.com/scipag/vulscan.git > /dev/null 2>&1
-cd vulscan/utilities/updater/
-echo -e $mwv " [+] აპლიკაცია წარმატებით დაყენდა გაუწერე ტერმინალს ამ განყოფილებაში ./Kathedral"
-exit
-fi
 
 if [ "$BASH_SOURCE" = "" ]; then
     echo "წარმოიქმნა სინტაქსური შეცდომა!"
@@ -1627,7 +1484,7 @@ checknet() {
     echo -e "GET http://google.com HTTP/1.0\n\n" | nc google.com 80 > /dev/null 2>&1
     if [ $? -ne 0 ]; then
     echo -e $wtl "[-]: ინტერნეტთან კავშირი : დაუმყარებელია";
-    chknet
+    
         sleep 1
     else
     echo -e $mwv "[${wtl}+$mwv]: ინტერნეტთან კავშირი : დამყარებულია";
@@ -1636,33 +1493,32 @@ checknet() {
     }
     deactivation
     sleep 1
-    checknet
     activation
 if [[ $* == "-s" ]] || [[ $* == "--start" ]]; then
     activation
-    checknet
+    
 elif [[ $* == "start" ]] || [[ $* == "--start" ]]; then
     activation
-    checknet
+    
 elif [[ $* == "stop" ]] || [[ $* == "--stop" ]]; then
     deactivation
-    checknet
+    
 elif [[ $* == "-x" ]] || [[ $* == "--stop" ]]; then
     deactivation
-    checknet
+    
 elif [[ $* == "-r" ]] || [[ $* == "--randomip" ]]; then
     random
-    checknet
+    
 elif [[ $* == "random" ]] || [[ $* == "--randomip" ]]; then
     random
-    checknet
+    
 elif [[ $* == "-R" ]] || [[ $* == "--restart" ]]; then
     deactivation
     sleep 1
-    checknet
+    
     activation
 elif [[ $* == "-c" ]] || [[ $* == "--checkmynet" ]]; then
-    checknet
+    
      ip
 elif [[ $* == "-S" ]] || [[ $* == "--status" ]]; then
     status
